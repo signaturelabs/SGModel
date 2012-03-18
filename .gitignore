@@ -1,0 +1,25 @@
+# Emacs backup files
+*~
+# Emacs file locks
+.#*
+
+# Xcode
+.DS_Store
+*.swp
+*~.nib
+build/
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+xcuserdata
+
+# IDEA (alternative xcode IDE)
+.idea
+
+# tell git to ignore white space differences and force merge.  That way a corrupt xcode project wont get checked in.
+*.pbxproj -crlf -diff -merge
+
+# "Versioning" build target temp file
+common/git_version.h
+Core/Core/SGCore-GitInfo.h

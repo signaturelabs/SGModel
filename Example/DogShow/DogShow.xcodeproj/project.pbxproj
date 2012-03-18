@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15EDC17D15168FA7004A3AD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EDC17C15168FA7004A3AD0 /* UIKit.framework */; };
+		15EDC17F15168FA7004A3AD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EDC17E15168FA7004A3AD0 /* Foundation.framework */; };
+		15EDC18115168FA7004A3AD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EDC18015168FA7004A3AD0 /* CoreGraphics.framework */; };
+		15EDC18715168FA7004A3AD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 15EDC18515168FA7004A3AD0 /* InfoPlist.strings */; };
+		15EDC18915168FA7004A3AD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC18815168FA7004A3AD0 /* main.m */; };
+		15EDC18D15168FA7004A3AD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC18C15168FA7004A3AD0 /* AppDelegate.m */; };
+		15EDC19015168FA7004A3AD0 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EDC18E15168FA7004A3AD0 /* MainStoryboard_iPhone.storyboard */; };
+		15EDC19315168FA7004A3AD0 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15EDC19115168FA7004A3AD0 /* MainStoryboard_iPad.storyboard */; };
+		15EDC19615168FA7004A3AD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC19515168FA7004A3AD0 /* ViewController.m */; };
+		15EDC1AA15169036004A3AD0 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 15EDC1A915169036004A3AD0 /* README */; };
+		15EDC1BC1516944C004A3AD0 /* DogShow.h in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1AB15169045004A3AD0 /* DogShow.h */; };
+		15EDC1BD1516944C004A3AD0 /* DogShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1AC15169045004A3AD0 /* DogShow.m */; };
+		15EDC1BE15169455004A3AD0 /* Dog.h in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC19F1516902D004A3AD0 /* Dog.h */; };
+		15EDC1BF15169455004A3AD0 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A01516902D004A3AD0 /* Dog.m */; };
+		15EDC1C015169455004A3AD0 /* DogOwner.h in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A11516902D004A3AD0 /* DogOwner.h */; };
+		15EDC1C115169455004A3AD0 /* DogOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A21516902D004A3AD0 /* DogOwner.m */; };
+		15EDC1C215169455004A3AD0 /* DogPoop.h in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A31516902D004A3AD0 /* DogPoop.h */; };
+		15EDC1C315169455004A3AD0 /* DogPoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A41516902D004A3AD0 /* DogPoop.m */; };
+		15EDC1C415169455004A3AD0 /* Flea.h in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A51516902D004A3AD0 /* Flea.h */; };
+		15EDC1C515169455004A3AD0 /* Flea.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A61516902D004A3AD0 /* Flea.m */; };
+		15EDC1C615169455004A3AD0 /* Poop.h in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A71516902D004A3AD0 /* Poop.h */; };
+		15EDC1C715169455004A3AD0 /* Poop.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1A81516902D004A3AD0 /* Poop.m */; };
+		15EDC1D31516976D004A3AD0 /* SGModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 15EDC1D21516976D004A3AD0 /* SGModelObject.m */; };
+		15EDC1D615169BF1004A3AD0 /* buckeye.json in Resources */ = {isa = PBXBuildFile; fileRef = 15EDC1D515169BF1004A3AD0 /* buckeye.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15EDC17815168FA7004A3AD0 /* DogShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15EDC17C15168FA7004A3AD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		15EDC17E15168FA7004A3AD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		15EDC18015168FA7004A3AD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		15EDC18415168FA7004A3AD0 /* DogShow-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DogShow-Info.plist"; sourceTree = "<group>"; };
+		15EDC18615168FA7004A3AD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		15EDC18815168FA7004A3AD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		15EDC18A15168FA7004A3AD0 /* DogShow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DogShow-Prefix.pch"; sourceTree = "<group>"; };
+		15EDC18B15168FA7004A3AD0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		15EDC18C15168FA7004A3AD0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		15EDC18F15168FA7004A3AD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		15EDC19215168FA7004A3AD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		15EDC19415168FA7004A3AD0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		15EDC19515168FA7004A3AD0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		15EDC19F1516902D004A3AD0 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		15EDC1A01516902D004A3AD0 /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		15EDC1A11516902D004A3AD0 /* DogOwner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogOwner.h; sourceTree = "<group>"; };
+		15EDC1A21516902D004A3AD0 /* DogOwner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogOwner.m; sourceTree = "<group>"; };
+		15EDC1A31516902D004A3AD0 /* DogPoop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogPoop.h; sourceTree = "<group>"; };
+		15EDC1A41516902D004A3AD0 /* DogPoop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogPoop.m; sourceTree = "<group>"; };
+		15EDC1A51516902D004A3AD0 /* Flea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Flea.h; sourceTree = "<group>"; };
+		15EDC1A61516902D004A3AD0 /* Flea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flea.m; sourceTree = "<group>"; };
+		15EDC1A71516902D004A3AD0 /* Poop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Poop.h; sourceTree = "<group>"; };
+		15EDC1A81516902D004A3AD0 /* Poop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Poop.m; sourceTree = "<group>"; };
+		15EDC1A915169036004A3AD0 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		15EDC1AB15169045004A3AD0 /* DogShow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogShow.h; sourceTree = "<group>"; };
+		15EDC1AC15169045004A3AD0 /* DogShow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogShow.m; sourceTree = "<group>"; };
+		15EDC1D11516976D004A3AD0 /* SGModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGModelObject.h; sourceTree = "<group>"; };
+		15EDC1D21516976D004A3AD0 /* SGModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGModelObject.m; sourceTree = "<group>"; };
+		15EDC1D515169BF1004A3AD0 /* buckeye.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buckeye.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15EDC17515168FA7004A3AD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15EDC17D15168FA7004A3AD0 /* UIKit.framework in Frameworks */,
+				15EDC17F15168FA7004A3AD0 /* Foundation.framework in Frameworks */,
+				15EDC18115168FA7004A3AD0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15EDC16D15168FA7004A3AD0 = {
+			isa = PBXGroup;
+			children = (
+				15EDC18215168FA7004A3AD0 /* DogShow */,
+				15EDC17B15168FA7004A3AD0 /* Frameworks */,
+				15EDC17915168FA7004A3AD0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		15EDC17915168FA7004A3AD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15EDC17815168FA7004A3AD0 /* DogShow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15EDC17B15168FA7004A3AD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15EDC17C15168FA7004A3AD0 /* UIKit.framework */,
+				15EDC17E15168FA7004A3AD0 /* Foundation.framework */,
+				15EDC18015168FA7004A3AD0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15EDC18215168FA7004A3AD0 /* DogShow */ = {
+			isa = PBXGroup;
+			children = (
+				15EDC1D415169BD9004A3AD0 /* Resources */,
+				15EDC1D01516976D004A3AD0 /* SGModel */,
+				15EDC1A915169036004A3AD0 /* README */,
+				15EDC19E1516900F004A3AD0 /* Models */,
+				15EDC18B15168FA7004A3AD0 /* AppDelegate.h */,
+				15EDC18C15168FA7004A3AD0 /* AppDelegate.m */,
+				15EDC1AB15169045004A3AD0 /* DogShow.h */,
+				15EDC1AC15169045004A3AD0 /* DogShow.m */,
+				15EDC18E15168FA7004A3AD0 /* MainStoryboard_iPhone.storyboard */,
+				15EDC19115168FA7004A3AD0 /* MainStoryboard_iPad.storyboard */,
+				15EDC19415168FA7004A3AD0 /* ViewController.h */,
+				15EDC19515168FA7004A3AD0 /* ViewController.m */,
+				15EDC18315168FA7004A3AD0 /* Supporting Files */,
+			);
+			path = DogShow;
+			sourceTree = "<group>";
+		};
+		15EDC18315168FA7004A3AD0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15EDC18415168FA7004A3AD0 /* DogShow-Info.plist */,
+				15EDC18515168FA7004A3AD0 /* InfoPlist.strings */,
+				15EDC18815168FA7004A3AD0 /* main.m */,
+				15EDC18A15168FA7004A3AD0 /* DogShow-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		15EDC19E1516900F004A3AD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15EDC19F1516902D004A3AD0 /* Dog.h */,
+				15EDC1A01516902D004A3AD0 /* Dog.m */,
+				15EDC1A11516902D004A3AD0 /* DogOwner.h */,
+				15EDC1A21516902D004A3AD0 /* DogOwner.m */,
+				15EDC1A31516902D004A3AD0 /* DogPoop.h */,
+				15EDC1A41516902D004A3AD0 /* DogPoop.m */,
+				15EDC1A51516902D004A3AD0 /* Flea.h */,
+				15EDC1A61516902D004A3AD0 /* Flea.m */,
+				15EDC1A71516902D004A3AD0 /* Poop.h */,
+				15EDC1A81516902D004A3AD0 /* Poop.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		15EDC1D01516976D004A3AD0 /* SGModel */ = {
+			isa = PBXGroup;
+			children = (
+				15EDC1D11516976D004A3AD0 /* SGModelObject.h */,
+				15EDC1D21516976D004A3AD0 /* SGModelObject.m */,
+			);
+			name = SGModel;
+			path = ../../../SGModel;
+			sourceTree = "<group>";
+		};
+		15EDC1D415169BD9004A3AD0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				15EDC1D515169BF1004A3AD0 /* buckeye.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15EDC17715168FA7004A3AD0 /* DogShow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15EDC19915168FA7004A3AD0 /* Build configuration list for PBXNativeTarget "DogShow" */;
+			buildPhases = (
+				15EDC17415168FA7004A3AD0 /* Sources */,
+				15EDC17515168FA7004A3AD0 /* Frameworks */,
+				15EDC17615168FA7004A3AD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DogShow;
+			productName = DogShow;
+			productReference = 15EDC17815168FA7004A3AD0 /* DogShow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15EDC16F15168FA7004A3AD0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Hollrr, LLC";
+			};
+			buildConfigurationList = 15EDC17215168FA7004A3AD0 /* Build configuration list for PBXProject "DogShow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 15EDC16D15168FA7004A3AD0;
+			productRefGroup = 15EDC17915168FA7004A3AD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15EDC17715168FA7004A3AD0 /* DogShow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15EDC17615168FA7004A3AD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15EDC18715168FA7004A3AD0 /* InfoPlist.strings in Resources */,
+				15EDC19015168FA7004A3AD0 /* MainStoryboard_iPhone.storyboard in Resources */,
+				15EDC19315168FA7004A3AD0 /* MainStoryboard_iPad.storyboard in Resources */,
+				15EDC1AA15169036004A3AD0 /* README in Resources */,
+				15EDC1D615169BF1004A3AD0 /* buckeye.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15EDC17415168FA7004A3AD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15EDC1BE15169455004A3AD0 /* Dog.h in Sources */,
+				15EDC1BF15169455004A3AD0 /* Dog.m in Sources */,
+				15EDC1C015169455004A3AD0 /* DogOwner.h in Sources */,
+				15EDC1C115169455004A3AD0 /* DogOwner.m in Sources */,
+				15EDC1C215169455004A3AD0 /* DogPoop.h in Sources */,
+				15EDC1C315169455004A3AD0 /* DogPoop.m in Sources */,
+				15EDC1C415169455004A3AD0 /* Flea.h in Sources */,
+				15EDC1C515169455004A3AD0 /* Flea.m in Sources */,
+				15EDC1C615169455004A3AD0 /* Poop.h in Sources */,
+				15EDC1C715169455004A3AD0 /* Poop.m in Sources */,
+				15EDC1BC1516944C004A3AD0 /* DogShow.h in Sources */,
+				15EDC1BD1516944C004A3AD0 /* DogShow.m in Sources */,
+				15EDC18915168FA7004A3AD0 /* main.m in Sources */,
+				15EDC18D15168FA7004A3AD0 /* AppDelegate.m in Sources */,
+				15EDC19615168FA7004A3AD0 /* ViewController.m in Sources */,
+				15EDC1D31516976D004A3AD0 /* SGModelObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		15EDC18515168FA7004A3AD0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15EDC18615168FA7004A3AD0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		15EDC18E15168FA7004A3AD0 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15EDC18F15168FA7004A3AD0 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		15EDC19115168FA7004A3AD0 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15EDC19215168FA7004A3AD0 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15EDC19715168FA7004A3AD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		15EDC19815168FA7004A3AD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15EDC19A15168FA7004A3AD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogShow/DogShow-Prefix.pch";
+				INFOPLIST_FILE = "DogShow/DogShow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		15EDC19B15168FA7004A3AD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogShow/DogShow-Prefix.pch";
+				INFOPLIST_FILE = "DogShow/DogShow-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15EDC17215168FA7004A3AD0 /* Build configuration list for PBXProject "DogShow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15EDC19715168FA7004A3AD0 /* Debug */,
+				15EDC19815168FA7004A3AD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15EDC19915168FA7004A3AD0 /* Build configuration list for PBXNativeTarget "DogShow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15EDC19A15168FA7004A3AD0 /* Debug */,
+				15EDC19B15168FA7004A3AD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15EDC16F15168FA7004A3AD0 /* Project object */;
+}

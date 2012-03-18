@@ -1,0 +1,15 @@
+== SGModel 
+
+A lightweight self-contained model object that provides boilerplate machinery commonly needed by model objects, such as the ability to be loaded from a dictionary or exported into a dictionary.
+
+== Features
+
+* Initialize a model from a dictionary, with the ability to load an object graph of arbitrary depth if your model contains references to other SGModelObject instances, or collections.
+* Export a model to a dictionary, with the ability to export an object graph of arbitrary depth.
+* Define a list of aliases to map field names in dictionary to field names in model object.
+* Define custom transformers, like the ability to map a date string in a dictionary field into an NSDate object in the model object.
+* Automatically box and unbox primitives
+
+== License
+
+MPL 1.1 -- See LICENSE file

@@ -1,0 +1,19 @@
+{
+    "name":"Buckeye",
+    "kind":"Cocker Spaniel",
+    "mommy":{
+        "name":"Kate"
+    },
+    "fleas":[
+             {
+             "color":"black"
+             }
+             ],
+    "poops":[
+             {
+             "amount":3,
+             "poopLat":36.0,
+             "poopLng":135.0
+             }
+             ]
+}
