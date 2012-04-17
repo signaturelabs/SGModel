@@ -60,7 +60,7 @@
     NSMutableOrderedSet *propertyKeys;
     Class class;
     
-    propertyKeys = [NSMutableOrderedSet orderedSet];
+    propertyKeys = [NSMutableOrderedSet orderedSet];  // only works in ios5!  (bit.ly/xOlrNV)
     class        = [self class];
     
     do {
