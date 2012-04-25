@@ -30,7 +30,7 @@
  Return the set of property keys for this model.  Each property key will be a string containing the
  name (aka "key") of the property.
  */
-- (NSOrderedSet *)propertyKeys;  
+- (NSArray *)propertyKeys;  
 
 /**
  A mapping between aliases and property keys.  This should be overridden by subclasses in order
@@ -60,6 +60,6 @@
  Export this model into a dictionary representation, but specify a subset of the top level keys that
  will be included in the dictionary.
  */
-- (NSDictionary *)dictionaryRepresentationForKeys:(NSSet *)keys;
+- (NSDictionary *)dictionaryRepresentationForKeys:(NSArray *)keys;
 
 @end

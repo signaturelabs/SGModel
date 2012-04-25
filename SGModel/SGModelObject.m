@@ -56,11 +56,11 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (NSOrderedSet *)propertyKeys {
-    NSMutableOrderedSet *propertyKeys;
+- (NSArray *)propertyKeys {
+    NSMutableArray *propertyKeys;
     Class class;
     
-    propertyKeys = [NSMutableOrderedSet orderedSet];  // only works in ios5!  (bit.ly/xOlrNV)
+    propertyKeys = [NSMutableArray array]; 
     class        = [self class];
     
     do {
@@ -96,7 +96,9 @@
             }];
             
             if (readOnlyFlagIndex == NSNotFound) {
-                [propertyKeys addObject:[NSString stringWithUTF8String:propertyName]];
+                if ([propertyKeys containsObject:[NSString stringWithUTF8String:propertyName]] == NO) {
+                    [propertyKeys addObject:[NSString stringWithUTF8String:propertyName]];                    
+                }
             }
             
         }
@@ -114,7 +116,7 @@
 - (void)loadWithDictionary:(NSDictionary *)dictionary {
     
     if ([dictionary isKindOfClass:[NSDictionary class]] == YES) {
-        NSOrderedSet *propertyKeys;
+        NSArray *propertyKeys;
         NSDictionary *propertyAliases;
         NSDictionary *propertyTransformerClasses;
         NSDictionary *propertyArrayElementClasses;
@@ -428,15 +430,15 @@
 }
 
 - (NSDictionary *)dictionaryRepresentation {
-    NSSet *keys;
+    NSArray *keys;
     
-    keys = [[self propertyKeys] set];
+    keys = [self propertyKeys];
    
     return [self dictionaryRepresentationForKeys:keys];
 
 }
 
-- (NSDictionary *)dictionaryRepresentationForKeys:(NSSet *)keys {
+- (NSDictionary *)dictionaryRepresentationForKeys:(NSArray *)keys {
     NSMutableDictionary *dictionary;
     NSDictionary *propertyAliases;
     NSDictionary *propertyTransformerClasses;
