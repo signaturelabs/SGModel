@@ -121,12 +121,21 @@
         NSDictionary *propertyTransformerClasses;
         NSDictionary *propertyArrayElementClasses;
         NSDictionary *classNamesForPrimitiveTypes;
+        NSString *rootContainerKey;
         
         propertyKeys                = [self propertyKeys];
         propertyAliases             = [self propertyAliases];
         propertyTransformerClasses  = [self propertyTransformerClasses];
         propertyArrayElementClasses = [self propertyArrayElementClasses];
         classNamesForPrimitiveTypes = [SGModelObject classNamesForPrimitiveTypes];
+        rootContainerKey            = [self rootContainerKey];
+        
+        if (rootContainerKey != nil && 
+            [dictionary objectForKey:rootContainerKey] != nil && 
+            [dictionary objectForKey:rootContainerKey] != [NSNull null]) {
+            
+            dictionary = [dictionary objectForKey:rootContainerKey]; 
+        }
         
         [propertyKeys enumerateObjectsUsingBlock:^(id propertyNameObject,
                                                     NSUInteger PropertyNameIndex,
@@ -251,6 +260,10 @@
 - (NSDictionary *)propertyArrayElementClasses {
     
     return [NSMutableDictionary dictionary];
+}
+
+- (NSString *)rootContainerKey {
+    return nil;
 }
 
 #pragma mark -

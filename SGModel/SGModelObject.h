@@ -62,4 +62,12 @@
  */
 - (NSDictionary *)dictionaryRepresentationForKeys:(NSArray *)keys;
 
+/**
+ The name of the key the server returns a json dictionary wrapped in.  If that key is present in the 
+ json dictionary, all the values under that key will be treated as the "top level dictionary".  Subclasses
+ are expected to override this depending on whether their server returns entities wrapped in a root
+ container key, eg, {"product":{"foo":"bar",..}}
+ */
+- (NSString *)rootContainerKey;  
+
 @end
