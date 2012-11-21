@@ -5,6 +5,8 @@
 #import "SGModelObject.h"
 #import <objc/runtime.h>
 
+static NSMutableDictionary *transformerInstances = nil;
+
 @interface SGModelObject ()
 
 + (NSDictionary *)classNamesForPrimitiveTypes;
@@ -193,11 +195,15 @@
                         NSValueTransformer *transformer;
                         id transformedValue;
                         
-                        transformer      = [[transformerClass alloc] init];
+                        transformer = [SGModelObject transformerInstanceForClass:transformerClass];
+                        if (transformer == nil) {
+                            transformer = [[[transformerClass alloc] init] autorelease];
+                            [SGModelObject setTransformerInstance:transformer forClass:transformerClass];
+                        }
+                        
                         transformedValue = [transformer transformedValue:object];
                         propertyValue    = transformedValue;
                         
-                        [transformer release];
                     }
                 }
                 
@@ -503,9 +509,6 @@
     return dictionary;
 }
 
-#pragma mark -
-#pragma mark Private Methods
-
 - (id)representationForObject:(id)object {
     
     if ([object isKindOfClass:[NSString class]] == YES ||
@@ -561,6 +564,27 @@
     
     return nil;
    
+}
+
+#pragma mark -
+#pragma mark Class Methods
+
++ (NSValueTransformer *)transformerInstanceForClass:(Class)transformerClass {
+    
+    if (transformerInstances == nil) {
+        return nil;
+    }
+    return [transformerInstances objectForKey:NSStringFromClass([transformerClass class])];
+    
+}
+
++ (void)setTransformerInstance:(NSValueTransformer *)transformer forClass:(Class)transformerClass {
+
+    if (transformerInstances == nil) {
+        transformerInstances = [[NSMutableDictionary alloc] init];
+    }    
+    [transformerInstances setObject:transformer forKey:NSStringFromClass([transformerClass class])];
+
 }
 
 @end
