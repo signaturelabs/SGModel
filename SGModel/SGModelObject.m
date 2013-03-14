@@ -9,6 +9,8 @@ static NSMutableDictionary *transformerInstances = nil;
 
 @interface SGModelObject ()
 
+@property (nonatomic, retain) NSMutableDictionary *unknownProperties;
+
 + (NSDictionary *)classNamesForPrimitiveTypes;
 
 - (NSString *)keyInDictionary:(NSDictionary *)dictionary
@@ -28,6 +30,8 @@ static NSMutableDictionary *transformerInstances = nil;
 
 @implementation SGModelObject
 
+@synthesize unknownProperties = unknownProperties_;
+
 #pragma mark -
 #pragma mark Initialization & Deallocation
 
@@ -36,7 +40,7 @@ static NSMutableDictionary *transformerInstances = nil;
     self = [super init];
     
     if (self != nil) {
-   
+        unknownProperties_ = [[NSMutableDictionary alloc] init];
     }
 
     return self;
@@ -53,6 +57,11 @@ static NSMutableDictionary *transformerInstances = nil;
     }
    
     return self;
+}
+
+- (void)dealloc {
+    
+    [super dealloc];
 }
 
 #pragma mark -
@@ -118,8 +127,10 @@ static NSMutableDictionary *transformerInstances = nil;
 - (void)loadWithDictionary:(NSDictionary *)dictionary {
     
     if ([dictionary isKindOfClass:[NSDictionary class]] == YES) {
+        
         NSArray *propertyKeys;
         NSDictionary *propertyAliases;
+        NSDictionary *reversedPropertyAliases;
         NSDictionary *propertyTransformerClasses;
         NSDictionary *propertyArrayElementClasses;
         NSDictionary *classNamesForPrimitiveTypes;
@@ -127,6 +138,7 @@ static NSMutableDictionary *transformerInstances = nil;
         
         propertyKeys                = [self propertyKeys];
         propertyAliases             = [self propertyAliases];
+        reversedPropertyAliases     = [self reversedPropertyAliases];
         propertyTransformerClasses  = [self propertyTransformerClasses];
         propertyArrayElementClasses = [self propertyArrayElementClasses];
         classNamesForPrimitiveTypes = [SGModelObject classNamesForPrimitiveTypes];
@@ -139,40 +151,43 @@ static NSMutableDictionary *transformerInstances = nil;
             dictionary = [dictionary objectForKey:rootContainerKey]; 
         }
         
-        [propertyKeys enumerateObjectsUsingBlock:^(id propertyNameObject,
-                                                    NSUInteger PropertyNameIndex,
-                                                    BOOL *stopLoading) {
+        [dictionary enumerateKeysAndObjectsUsingBlock:^(id dictionaryKey, id obj, BOOL *stop) {
+
             id propertyValue;
             NSString *propertyName;
-            NSString *dictionaryKey;
             
             propertyValue = nil;
-            propertyName  = (NSString *)propertyNameObject;
-            dictionaryKey = [self keyInDictionary:dictionary 
-                                 forPropertyNamed:propertyName 
-                                      withAliases:propertyAliases];
+            propertyName  = [self propertyName:dictionaryKey
+                           withReversedAliases:reversedPropertyAliases];
             
-            if ([dictionaryKey length] > 0) {
+
+            if (propertyName == nil || [propertyName length] <= 0) {
+
+                [[self unknownProperties] setObject:obj forKey:dictionaryKey];
+            
+            }
+            else {
+            
                 id object;
                 Class propertyClass;
                 
                 object        = [dictionary objectForKey:dictionaryKey];
-                propertyClass = [self classForPropertyNamed:propertyName 
+                propertyClass = [self classForPropertyNamed:propertyName
                                        withPrimitiveClasses:classNamesForPrimitiveTypes];
                 
-                   
+                
                 if ([object isKindOfClass:propertyClass] == YES) {
                     
                     if ([propertyClass conformsToProtocol:@protocol(NSMutableCopying)] == YES) {
-                    
+                        
                         propertyValue = [object mutableCopy];
                         
                         [propertyValue autorelease];
-                    
+                        
                     } else {
-                  
+                        
                         propertyValue = object;
-
+                        
                     }
                     
                 } else if ([object isKindOfClass:[NSDictionary class]] == YES) {
@@ -183,10 +198,10 @@ static NSMutableDictionary *transformerInstances = nil;
                         
                         [propertyValue autorelease];
                     }
-            
+                    
                 } else {
                     Class transformerClass;
-    
+                    
                     transformerClass = [self classInDictionary:propertyTransformerClasses
                                                  withBaseClass:[NSValueTransformer class]
                                               forPropertyNamed:propertyName];
@@ -243,6 +258,8 @@ static NSMutableDictionary *transformerInstances = nil;
                         }
                     }
                 }
+
+            
             }
             
             if (propertyValue != nil) {
@@ -250,6 +267,7 @@ static NSMutableDictionary *transformerInstances = nil;
             }
             
         }];
+
     }
 }
 
@@ -306,6 +324,45 @@ static NSMutableDictionary *transformerInstances = nil;
     return dictionary;
 }
 
+
+- (NSDictionary *)reversedPropertyAliases  {
+    
+    NSMutableDictionary *reversedAliases = [NSMutableDictionary dictionary];
+    NSDictionary *aliases = [self propertyAliases];
+    [aliases enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [reversedAliases setObject:key forKey:obj];
+    }];
+    return reversedAliases;
+    
+}
+
+- (NSString *)propertyName:(NSString *)dictionaryKey
+       withReversedAliases:(NSDictionary *)reversedPropertyAliases  {
+
+    // do we have a property name for dictionaryKey?
+    objc_property_t property;
+
+    property = class_getProperty([self class], [dictionaryKey UTF8String]);
+
+    // if not, do we have a property name for the alias of dictionaryKey
+    if (property != nil) {
+        return dictionaryKey;
+    }
+    else {
+        NSString *alias = [reversedPropertyAliases objectForKey:dictionaryKey];
+        property = class_getProperty([self class], [alias UTF8String]);
+        if (property != nil) {
+            return alias;
+        }
+        else {
+            return nil;
+        }
+    }
+    
+    return nil;
+    
+    
+}
 
 - (NSString *)keyInDictionary:(NSDictionary *)dictionary
              forPropertyNamed:(NSString *)propertyName 
@@ -506,6 +563,11 @@ static NSMutableDictionary *transformerInstances = nil;
         }
     }
 
+    // add objects from unknown fields dictionary
+    [[self unknownProperties] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [dictionary setObject:obj forKey:key];
+    }];
+    
     return dictionary;
 }
 
