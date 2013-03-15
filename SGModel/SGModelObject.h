@@ -68,12 +68,6 @@
  are expected to override this depending on whether their server returns entities wrapped in a root
  container key, eg, {"product":{"foo":"bar",..}}
  */
-- (NSString *)rootContainerKey;
-
-/**
- For effficiency reasons, avoid recreating NSValueTransformers by recycling instances
- */
-+ (NSValueTransformer *)transformerInstanceForClass:(Class)transformerClass;
-+ (void)setTransformerInstance:(NSValueTransformer *)transformer forClass:(Class)transformerClass;
+- (NSString *)rootContainerKey;  
 
 @end

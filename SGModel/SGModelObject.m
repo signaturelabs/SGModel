@@ -5,8 +5,6 @@
 #import "SGModelObject.h"
 #import <objc/runtime.h>
 
-static NSMutableDictionary *transformerInstances = nil;
-
 @interface SGModelObject ()
 
 @property (nonatomic, retain) NSMutableDictionary *unknownProperties;
@@ -210,15 +208,11 @@ static NSMutableDictionary *transformerInstances = nil;
                         NSValueTransformer *transformer;
                         id transformedValue;
                         
-                        transformer = [SGModelObject transformerInstanceForClass:transformerClass];
-                        if (transformer == nil) {
-                            transformer = [[[transformerClass alloc] init] autorelease];
-                            [SGModelObject setTransformerInstance:transformer forClass:transformerClass];
-                        }
-                        
+                        transformer      = [[transformerClass alloc] init];
                         transformedValue = [transformer transformedValue:object];
                         propertyValue    = transformedValue;
                         
+                        [transformer release];
                     }
                 }
                 
@@ -571,6 +565,9 @@ static NSMutableDictionary *transformerInstances = nil;
     return dictionary;
 }
 
+#pragma mark -
+#pragma mark Private Methods
+
 - (id)representationForObject:(id)object {
     
     if ([object isKindOfClass:[NSString class]] == YES ||
@@ -626,27 +623,6 @@ static NSMutableDictionary *transformerInstances = nil;
     
     return nil;
    
-}
-
-#pragma mark -
-#pragma mark Class Methods
-
-+ (NSValueTransformer *)transformerInstanceForClass:(Class)transformerClass {
-    
-    if (transformerInstances == nil) {
-        return nil;
-    }
-    return [transformerInstances objectForKey:NSStringFromClass([transformerClass class])];
-    
-}
-
-+ (void)setTransformerInstance:(NSValueTransformer *)transformer forClass:(Class)transformerClass {
-
-    if (transformerInstances == nil) {
-        transformerInstances = [[NSMutableDictionary alloc] init];
-    }    
-    [transformerInstances setObject:transformer forKey:NSStringFromClass([transformerClass class])];
-
 }
 
 @end
